@@ -12,7 +12,7 @@
   </head>
   <body>
 
-    <form action="index.html" method="post">
+    <form action="{{ url('/tambah') }}" method="post">
       @csrf
       <p>Masukin Data</p>  <input type="text" name="cek">
       <button class="btn btn-primary" type="submit" name="submit">Tambah Data</button>
