@@ -12,32 +12,14 @@
   </head>
   <body>
 
-    <form action="{{ url('/tambah') }}" method="post">
-      @csrf
-      <p>Masukin Data</p>  <input type="text" name="cek">
-      <button class="btn btn-primary" type="submit" name="submit">Tambah Data</button>
-    </form>
-
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">ID</th>
-          <th scope="col">Cek</th>
-        </tr>
-      </thead>
-      <tbody>
-        <?php foreach ($data as $a): ?>
-          <tr>
-            <td>{{ $a->id }}</td>
-            <td>{{ $a->cek }}</td>
-            <td>
-              <a class="btn btn-primary" href="{{ url('/hapus/' . $a->id) }}">Hapus Data</a>
-              <a class="btn btn-primary" href="{{ url('/edit/' . $a->id) }}">Edit Data</a>
-            </td>
-          </tr>
-        <?php endforeach; ?>
-      </tbody>
-    </table>
+    <?php foreach ($data as $a): ?>
+          <form action="{{ url('/edit/update') }}" method="post">
+            @csrf
+            <input type="text" name="id" value="{{ $a->id }}" disabled>
+            <p>Masukin Data</p>  <input type="text" name="cek" value="{{ $a->cek }}">
+            <button class="btn btn-primary" type="submit" name="submit" value="">Edit Data</button>
+          </form>
+    <?php endforeach; ?>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

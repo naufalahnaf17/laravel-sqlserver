@@ -36,4 +36,23 @@ class CekController extends Controller
 
     }
 
+    public function edit($id){
+      $data = DB::table('cek')->where('id',$id)->get();
+      return view('edit' , ['data' => $data]);
+    }
+
+    public function store(Request $request){
+
+      $data = DB::table('cek')->where('id',$request->id)->update([
+        'cek' => $request->cek
+      ]);
+
+      if ($data) {
+        return redirect('/');
+      }else {
+        return response('terjadi kesalahan');
+      }
+
+    }
+
 }
