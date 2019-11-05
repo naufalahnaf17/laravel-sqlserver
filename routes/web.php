@@ -13,3 +13,4 @@
 
 Route::get('/' , 'CekController@index');
 Route::post('/tambah' , 'CekController@tambah');
+Route::get('/hapus/{id}' , 'CekController@hapus');

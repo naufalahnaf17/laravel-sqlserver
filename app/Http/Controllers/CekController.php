@@ -29,4 +29,11 @@ class CekController extends Controller
 
     }
 
+    public function hapus($id){
+
+      DB::table('cek')->where('id',$id)->delete();
+      return redirect('/');
+
+    }
+
 }

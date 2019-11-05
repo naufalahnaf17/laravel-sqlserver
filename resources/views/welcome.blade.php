@@ -30,6 +30,9 @@
           <tr>
             <td>{{ $a->id }}</td>
             <td>{{ $a->cek }}</td>
+            <td>
+              <a class="btn btn-primary" href="{{ url('/hapus/' . $a->id) }}">Hapus Data</a>
+            </td>
           </tr>
         <?php endforeach; ?>
       </tbody>
