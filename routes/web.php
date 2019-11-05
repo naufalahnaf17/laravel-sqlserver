@@ -12,3 +12,4 @@
 */
 
 Route::get('/' , 'CekController@index');
+Route::post('/tambah' , 'CekController@tambah');
