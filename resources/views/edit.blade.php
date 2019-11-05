@@ -13,9 +13,8 @@
   <body>
 
     <?php foreach ($data as $a): ?>
-          <form action="{{ url('/edit/update') }}" method="post">
+          <form action="{{ url('/edit/update/'.$a->id) }}" method="post">
             @csrf
-            <input type="text" name="id" value="{{ $a->id }}" disabled>
             <p>Masukin Data</p>  <input type="text" name="cek" value="{{ $a->cek }}">
             <button class="btn btn-primary" type="submit" name="submit" value="">Edit Data</button>
           </form>

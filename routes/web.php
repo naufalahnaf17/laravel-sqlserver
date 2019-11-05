@@ -15,4 +15,4 @@ Route::get('/' , 'CekController@index');
 Route::post('/tambah' , 'CekController@tambah');
 Route::get('/hapus/{id}' , 'CekController@hapus');
 Route::get('/edit/{id}' , 'CekController@edit');
-Route::post('edit/update' , 'CekController@store');
+Route::post('edit/update/{id}' , 'CekController@store');

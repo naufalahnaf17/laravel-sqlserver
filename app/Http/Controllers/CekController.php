@@ -41,9 +41,9 @@ class CekController extends Controller
       return view('edit' , ['data' => $data]);
     }
 
-    public function store(Request $request){
+    public function store($id,Request $request){
 
-      $data = DB::table('cek')->where('id',$request->id)->update([
+      $data = DB::table('cek')->where('id',$id)->update([
         'cek' => $request->cek
       ]);
 
